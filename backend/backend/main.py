@@ -20,7 +20,7 @@
 #     os.makedirs(SAVE_PATH)
 
 # @app.post("/shorten")
-# def generate_qr_and_tinyurl(data: EmployeeData):
+# def generate_qr_and_cossmic_services(data: EmployeeData):
 #     employee_name = data.employee_name.strip()
 #     target_url = data.target_url.strip()
 
