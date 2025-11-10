@@ -1,3 +1,5 @@
+
+
 # # main.py
 # from fastapi import FastAPI, HTTPException
 # from pydantic import BaseModel
@@ -73,12 +75,28 @@
 
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware #anumita
+
 from pydantic import BaseModel
 from utils import generate_qr_and_html, generate_short_code
 from database import save_record, init_db
 import os
 
 app = FastAPI()
+
+# ✅ CORS middleware //anumita
+origins = [
+    "http://localhost:5173",  # Vite dev server
+    "http://127.0.0.1:5173",
+]
+
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # allow all origins (for development)
+    allow_methods=["*"],  # allow all HTTP methods (GET, POST, etc.)
+    allow_headers=["*"],  # allow all headers
+)
 
 # Initialize DB on startup
 @app.on_event("startup")
