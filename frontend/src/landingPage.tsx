@@ -148,7 +148,8 @@ const HeroSection = () => {
           </div>
 
           {/* Button */}
-          <button className="bg-[#2d8659] hover:bg-[#23794d] text-white font-medium py-3 rounded-md w-full transition-all">
+          <button 
+          className="bg-[#2d8659] hover:bg-[#23794d] text-white font-medium py-3 rounded-md w-full transition-all">
             QR generate
           </button>
 
